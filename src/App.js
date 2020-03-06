@@ -4,7 +4,7 @@ import './App.scss';
 
 import { withBookstoreService } from './components/HigherOrderComponents/WithBookstoreService';
 import Home from './components/Pages/Home';
-import Card from './components/Pages/Card';
+import Cart from './components/Pages/Cart';
 
 const App = ({ bookstoreService }) => {
   return (
@@ -15,8 +15,8 @@ const App = ({ bookstoreService }) => {
         exact
       />
       <Route
-        path="/card"
-        component={Card}
+        path="/cart"
+        component={Cart}
       />
     </Switch>
   );

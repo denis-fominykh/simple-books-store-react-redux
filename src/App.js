@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 
-import withBookstoreService from './components/HigherOrderComponents/WithBookstoreService';
+import { withBookstoreService } from './components/HigherOrderComponents/WithBookstoreService';
 
 const App = ({ bookstoreService }) => {
   return (

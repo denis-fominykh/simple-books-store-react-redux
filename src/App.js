@@ -1,8 +1,9 @@
 import React from 'react';
-
 import './App.scss';
 
-const App = () => {
+import withBookstoreService from './components/HigherOrderComponents/WithBookstoreService';
+
+const App = ({ bookstoreService }) => {
   return (
     <div className="App">
       <h1>Simple Books Store</h1>
@@ -10,4 +11,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default withBookstoreService()(App);

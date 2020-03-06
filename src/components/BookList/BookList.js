@@ -2,7 +2,18 @@ import React, { Component } from 'react';
 import BookListItem from '../BookListItem/BookListItem';
 import { connect } from 'react-redux';
 
+import { withBookstoreService } from '../HigherOrderComponents/WithBookstoreService';
+import { booksLoaded } from '../../actions/actions';
+
 class BookList extends Component {
+  componentDidMount() {
+    const { bookstoreService } = this.props;
+    const data = bookstoreService.getBooks();
+
+    this.props.booksLoaded(data);
+  }
+
+
   render() {
     const { books } = this.props;
     return (
@@ -21,4 +32,12 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps)(BookList);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    booksLoaded: newBooks => {
+      dispatch(booksLoaded(newBooks));
+    }
+  }
+}
+
+export default withBookstoreService()(connect(mapStateToProps, mapDispatchToProps)(BookList));

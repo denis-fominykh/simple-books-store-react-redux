@@ -1,5 +1,4 @@
 import React from 'react';
-import { render } from 'node-sass';
 
 const BookListItem = ({ book }) => {
   const { title, author } = book;

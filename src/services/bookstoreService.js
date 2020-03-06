@@ -3,7 +3,7 @@ export default class BookstoreService {
     return [
       {
         id: 1,
-        title: 'The Captain\'s Daughter',
+        title: "The Captain's Daughter",
         author: 'Alexander Pushkin',
       },
       {

@@ -6,7 +6,7 @@ import { withBookstoreService } from './components/HigherOrderComponents/WithBoo
 import Home from './components/Pages/Home';
 import Cart from './components/Pages/Cart';
 
-const App = ({ bookstoreService }) => {
+const App = () => {
   return (
     <Switch>
       <Route

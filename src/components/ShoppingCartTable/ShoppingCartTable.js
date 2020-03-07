@@ -1,4 +1,5 @@
 import React from 'react';
+import './ShoppingCartTable.scss';
 
 const ShoppingCartTable = () => {
   return (
@@ -15,7 +16,7 @@ const ShoppingCartTable = () => {
         <tbody>
           <tr>
             <td>1</td>
-            <td>Other</td>
+            <td>The Red and the Black</td>
             <td>2</td>
             <td>$12</td>
             <td>
@@ -33,7 +34,7 @@ const ShoppingCartTable = () => {
         </tbody>
       </table>
       <div className="total">
-        Total: $20
+        Total: $24
       </div>
     </div>
   )

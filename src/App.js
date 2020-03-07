@@ -8,17 +8,19 @@ import Cart from './components/Pages/Cart';
 
 const App = () => {
   return (
-    <Switch>
-      <Route
-        path="/"
-        component={Home}
-        exact
-      />
-      <Route
-        path="/cart"
-        component={Cart}
-      />
-    </Switch>
+    <main className="container" role="main">
+      <Switch>
+        <Route
+          path="/"
+          component={Home}
+          exact
+        />
+        <Route
+          path="/cart"
+          component={Cart}
+        />
+      </Switch>
+    </main>
   );
 };
 

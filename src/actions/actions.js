@@ -1,3 +1,3 @@
-const booksLoaded = newBooks => ({ type: 'BOOKS_LOADED', payload: newBooks });
+const booksLoaded = (newBooks) => ({ type: 'BOOKS_LOADED', payload: newBooks });
 
-export { booksLoaded };
+export default booksLoaded;

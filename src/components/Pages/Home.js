@@ -1,6 +1,7 @@
 import React from 'react';
-import ShoppingCartTable from '../ShoppingCartTable/ShoppingCartTable';
-import BookList from '../BookList/BookList';
+
+import ShoppingCartTable from '../ShoppingCartTable';
+import BookList from '../BookList';
 
 const Home = () => {
   return (
@@ -9,6 +10,6 @@ const Home = () => {
       <ShoppingCartTable />
     </div>
   );
-}
+};
 
 export default Home;

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './ShoppingCartTable.scss';
 
 const ShoppingCartTable = () => {
@@ -33,11 +34,9 @@ const ShoppingCartTable = () => {
           </tr>
         </tbody>
       </table>
-      <div className="total">
-        Total: $24
-      </div>
+      <div className="total">Total: $24</div>
     </div>
-  )
-}
+  );
+};
 
 export default ShoppingCartTable;

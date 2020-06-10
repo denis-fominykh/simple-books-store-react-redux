@@ -9,10 +9,11 @@ import withBookstoreService from '../HOC';
 
 class BookList extends Component {
   componentDidMount() {
-    const { bookstoreService } = this.props;
-    const data = bookstoreService.getBooks();
+    const { bookstoreService, booksLoaded } = this.props;
 
-    this.props.booksLoaded(data);
+    bookstoreService.getBooks().then((data) => {
+      booksLoaded(data);
+    });
   }
 
   render() {

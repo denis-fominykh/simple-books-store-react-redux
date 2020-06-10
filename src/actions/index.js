@@ -1,3 +1,3 @@
-import booksLoaded from './actions';
+import { booksLoaded, booksRequested } from './actions';
 
-export default booksLoaded;
+export { booksLoaded, booksRequested };

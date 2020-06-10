@@ -6,6 +6,7 @@ import './BookList.scss';
 import BookListItem from '../BookListItem';
 import booksLoaded from '../../actions';
 import withBookstoreService from '../HOC';
+import Spinner from '../Spinner';
 
 class BookList extends Component {
   componentDidMount() {
@@ -17,7 +18,12 @@ class BookList extends Component {
   }
 
   render() {
-    const { books } = this.props;
+    const { books, loading } = this.props;
+
+    if (loading) {
+      return <Spinner />;
+    }
+
     return (
       <ul className="book-list">
         {books.map((book) => {
@@ -35,6 +41,7 @@ class BookList extends Component {
 const mapStateToProps = (state) => {
   return {
     books: state.books,
+    loading: state.loading,
   };
 };
 

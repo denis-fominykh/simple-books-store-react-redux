@@ -4,14 +4,15 @@ import { connect } from 'react-redux';
 import './BookList.scss';
 
 import BookListItem from '../BookListItem';
-import booksLoaded from '../../actions';
+import { booksLoaded, booksRequested } from '../../actions';
 import withBookstoreService from '../HOC';
 import Spinner from '../Spinner';
 
 class BookList extends Component {
   componentDidMount() {
-    const { bookstoreService, booksLoaded } = this.props;
+    const { bookstoreService, booksLoaded, booksRequested } = this.props;
 
+    booksRequested();
     bookstoreService.getBooks().then((data) => {
       booksLoaded(data);
     });
@@ -50,6 +51,7 @@ const mapDispatchToProps = (dispatch) => {
     booksLoaded: (newBooks) => {
       dispatch(booksLoaded(newBooks));
     },
+    booksRequested: () => dispatch(booksRequested()),
   };
 };
 

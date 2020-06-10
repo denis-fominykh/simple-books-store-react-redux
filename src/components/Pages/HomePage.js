@@ -3,7 +3,7 @@ import React from 'react';
 import ShoppingCartTable from '../ShoppingCartTable';
 import BookList from '../BookList';
 
-const Home = () => {
+const HomePage = () => {
   return (
     <div>
       <BookList />
@@ -12,4 +12,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

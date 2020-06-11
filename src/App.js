@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import './App.scss';
 
 import ShopHeader from './components/ShopHeader/ShopHeader';
 import { HomePage, CartPage } from './components/Pages';

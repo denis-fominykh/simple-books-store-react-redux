@@ -1,5 +1,15 @@
-const booksLoaded = (newBooks) => ({ type: 'BOOKS_LOADED', payload: newBooks });
-const booksRequested = () => ({ type: 'BOOKS_REQUESTED' });
-const booksError = (error) => ({ type: 'BOOKS_ERROR', payload: error });
+const booksLoaded = (newBooks) => ({
+  type: 'FETCH_BOOKS_SUCCESS',
+  payload: newBooks,
+});
+
+const booksRequested = () => ({
+  type: 'FETCH_BOOKS_REQUEST',
+});
+
+const booksError = (error) => ({
+  type: 'FETCH_BOOKS_FAILURE',
+  payload: error,
+});
 
 export { booksLoaded, booksRequested, booksError };

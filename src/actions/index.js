@@ -3,6 +3,15 @@ import {
   booksRequested,
   booksError,
   bookAddedToCart,
+  bookRemovedFromCart,
+  allBooksRemovedFromCart,
 } from './actions';
 
-export { booksLoaded, booksRequested, booksError, bookAddedToCart };
+export {
+  booksLoaded,
+  booksRequested,
+  booksError,
+  bookAddedToCart,
+  bookRemovedFromCart,
+  allBooksRemovedFromCart,
+};

@@ -1,13 +1,9 @@
 const initialState = {
-  bookList: {
-    books: [],
-    loading: true,
-    error: null,
-  },
-  shoppingCart: {
-    cartItems: [],
-    orderTotal: 0,
-  },
+  books: [],
+  loading: true,
+  error: null,
+  cartItems: [],
+  orderTotal: 0,
 };
 
 const updateCartItems = (cartItems, item, idx) => {

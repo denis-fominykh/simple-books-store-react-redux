@@ -1,3 +1,8 @@
-import { booksLoaded, booksRequested, booksError } from './actions';
+import {
+  booksLoaded,
+  booksRequested,
+  booksError,
+  bookAddedToCart,
+} from './actions';
 
-export { booksLoaded, booksRequested, booksError };
+export { booksLoaded, booksRequested, booksError, bookAddedToCart };

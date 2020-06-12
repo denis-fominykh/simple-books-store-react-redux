@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { booksLoaded, booksRequested, booksError } from '../../actions';
+import {
+  booksLoaded,
+  booksRequested,
+  booksError,
+  bookAddedToCart,
+} from '../../actions';
 import withBookstoreService from '../HOC';
 import Spinner from '../Spinner';
 import ErrorIndicator from '../ErrorIndicator';
@@ -26,7 +31,7 @@ class BookListContainer extends Component {
   }
 
   render() {
-    const { books, loading, error } = this.props;
+    const { books, loading, error, onAddedToCard } = this.props;
 
     if (loading) {
       return <Spinner />;
@@ -36,7 +41,7 @@ class BookListContainer extends Component {
       return <ErrorIndicator />;
     }
 
-    return <BookList books={books} />;
+    return <BookList books={books} onAddedToCard={onAddedToCard} />;
   }
 }
 
@@ -53,6 +58,7 @@ const mapDispatchToProps = (dispatch) => {
     booksLoaded: (newBooks) => dispatch(booksLoaded(newBooks)),
     booksRequested: () => dispatch(booksRequested()),
     booksError: (error) => dispatch(booksError(error)),
+    onAddedToCard: (id) => dispatch(bookAddedToCart(id)),
   };
 };
 

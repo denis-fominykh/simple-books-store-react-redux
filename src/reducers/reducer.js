@@ -68,6 +68,68 @@ const reducer = (state = initialState, action) => {
           ],
         };
       }
+    case 'BOOK_REMOVED_FROM_CART':
+      const removeBookId = action.payload;
+      const removeBook = state.books.find(({ id }) => id === removeBookId);
+
+      const removeItemIndex = state.cartItems.findIndex(
+        ({ id }) => id === removeBookId,
+      );
+      const removeItem = state.cartItems[removeItemIndex];
+
+      let updateItem;
+
+      if (removeItem) {
+        updateItem = {
+          ...removeItem,
+          count: removeItem.count - 1,
+          total: removeItem.total - removeBook.price,
+        };
+      }
+
+      if (removeItem.count === 1) {
+        return {
+          ...state,
+          cartItems: [
+            ...state.cartItems.slice(0, removeItemIndex),
+            ...state.cartItems.slice(removeItemIndex + 1),
+          ],
+        };
+      }
+
+      if (removeItemIndex < 0) {
+        return {
+          ...state,
+        };
+      } else {
+        return {
+          ...state,
+          cartItems: [
+            ...state.cartItems.slice(0, removeItemIndex),
+            updateItem,
+            ...state.cartItems.slice(removeItemIndex + 1),
+          ],
+        };
+      }
+    case 'ALL_BOOKS_REMOVED_FROM_CART':
+      const removeBooksId = action.payload;
+      const removeItemsIndex = state.cartItems.findIndex(
+        ({ id }) => id === removeBooksId,
+      );
+
+      if (removeItemsIndex < 0) {
+        return {
+          ...state,
+        };
+      } else {
+        return {
+          ...state,
+          cartItems: [
+            ...state.cartItems.slice(0, removeItemsIndex),
+            ...state.cartItems.slice(removeItemsIndex + 1),
+          ],
+        };
+      }
     default:
       return state;
   }

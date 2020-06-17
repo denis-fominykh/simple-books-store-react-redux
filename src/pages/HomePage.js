@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ShoppingCartTable from '../ShoppingCartTable';
-import BookListContainer from '../BookListContainer';
+import ShoppingCartTable from '../components/ShoppingCartTable';
+import BookListContainer from '../components/BookListContainer';
 
 const HomePage = () => {
   return (
